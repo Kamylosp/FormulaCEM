@@ -1,0 +1,16 @@
+{
+  "codename": "SuiGeneris24",
+  "ttf_path": "\\assets\\sui-generis.ttf",
+  "bin_path": "\\assets\\ui_font_SuiGeneris24.bin",
+  "c_path": "\\assets\\ui_font_SuiGeneris24.c",
+  "cfg_path": "\\assets\\ui_font_SuiGeneris24.fcfg",
+  "size": 24,
+  "bpp": 1,
+  "letters": 0,
+  "ranges": [
+    "0x20-0x7f"
+  ],
+  "symbols": "",
+  "customparams": "--no-compress --no-prefilter",
+  "uploaded": false
+}
