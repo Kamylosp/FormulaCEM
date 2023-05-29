@@ -35,13 +35,13 @@
     "theme_dark": false,
     "theme_color1": 5,
     "theme_color2": 0,
-    "exportFolderPath": "",
-    "projectExportFolderPath": "",
-    "backup_cnt": 4,
+    "exportFolderPath": "C:\\Users\\Windows 10\\Documents\\GitHub\\FormulaCEM\\DashBoard EV 2023\\Arquivos Display",
+    "projectExportFolderPath": "C:\\Users\\Windows 10\\Documents\\GitHub\\FormulaCEM\\DashBoard EV 2023\\Arquivos Display",
+    "backup_cnt": 5,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.6",
-    "callfuncsexport": null,
-    "lvgl_include_path": null,
+    "callfuncsexport": "C_FILE",
+    "lvgl_include_path": "",
     "BitDepth": 16,
     "Name": "SquareLine_Project"
   }

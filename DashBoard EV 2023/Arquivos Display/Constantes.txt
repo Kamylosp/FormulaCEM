@@ -14,3 +14,7 @@ SOC Bar
 
 Text Colors:
     Blue: 00AEEE
+
+Card SD Barckground Color:
+    - Vermelho: FF0000
+    - Verde: 0DFF00
