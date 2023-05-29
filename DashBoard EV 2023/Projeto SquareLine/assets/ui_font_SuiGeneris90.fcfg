@@ -1,0 +1,16 @@
+{
+  "codename": "SuiGeneris90",
+  "ttf_path": "\\assets\\sui-generis.ttf",
+  "bin_path": "\\assets\\ui_font_SuiGeneris90.bin",
+  "c_path": "\\assets\\ui_font_SuiGeneris90.c",
+  "cfg_path": "\\assets\\ui_font_SuiGeneris90.fcfg",
+  "size": 90,
+  "bpp": 1,
+  "letters": 3,
+  "ranges": [
+    "0x20-0xff"
+  ],
+  "symbols": "",
+  "customparams": "--no-compress --no-prefilter",
+  "uploaded": false
+}
