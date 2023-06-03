@@ -1,0 +1,14 @@
+screens/ui_Screen1.c
+ui.c
+ui_helpers.c
+images/ui_img_escudo_copy_png.c
+images/ui_img_imcard2_png.c
+images/ui_img_cardsd2_png.c
+fonts/ui_font_OxaniumBold40.c
+fonts/ui_font_SuiGeneris22.c
+fonts/ui_font_SuiGeneris24.c
+fonts/ui_font_SuiGeneris32.c
+fonts/ui_font_SuiGeneris40.c
+fonts/ui_font_SuiGeneris55extended.c
+fonts/ui_font_SuiGeneris80.c
+fonts/ui_font_SuiGeneris90.c

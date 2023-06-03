@@ -1,0 +1,20 @@
+Nesta pasta estão os seguintes códigos:
+- Códigos do Estevan Calatrone: código do display do dashboard do IC 2023
+
+- Codigo_base_display: arquivo .ino com a lógica de funcionamento
+		das informações do display. (É necessário incluir
+		os arquivos exportados do SquareLine na mesma pasta).
+
+- Codigo_teste_cartao_SD : arquivo com a lógica de funcionamento
+		do armazenamento das informações no cartão SD.
+		Programa compilando normalmente.
+
+- comunicacao_can: arquivo .ino com a lógica de funcionamento da
+		comunicação CAN.
+
+- Codigo_Completo: Código principal do display com todas as bibliotecas
+		e periféricos. Código principal do Dashboard.
+
+- libraries: arquivo compactado com as bibliotecas utilizadas no projeto.
+		É necessário que esses arquivos estejam dentro da pasta
+		"libraries" do Arduino.
