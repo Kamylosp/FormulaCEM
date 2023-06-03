@@ -9,19 +9,20 @@ mesma pasta deste arquivo.*/
 #include <Arduino_GFX_Library.h>
 #include "ui.h"
 
-
 // Bibliotecas para salvar no Cartão SD
 #include "FS.h"
 #include "SD.h"
 #include "SPI.h"
 
-#define pin_botao 19      // Define o pino do botão
+#define pin_botao 19                  // Define o pino do botão
 #define time_botao_precionado 2000    // Tempo necessário para iniciar o armazenamento em ms
+#define tempo_entre_armazenamento 200 // Tempo de intervalo entre cada armazenamento no cartão SD
 
 // Inicializa as variáveis para utilizar no cartão SD
-bool CardSDSaving = false;    // Se: ->true: salvando no cartão. Senão, não está salvando
-char filename[20];            // Armazena o nome do arquivo
-unsigned long int time_inicial;
+bool CardSDSaving = false;            // Se: ->true: salvando no cartão. Senão, não está salvando
+char filename[20];                    // Armazena o nome do arquivo
+unsigned int time_inicial;            // Armazena o tempo de início do armazenamento no cartão SD
+unsigned int t_aux = 0;                   // Variável auxiliar
 
 
 // Biblioteca da comunicação CAN
@@ -39,8 +40,6 @@ float packCurrent = -1;
 float packVoltage = -1;
 float highVoltage = -1;
 float lowVoltage = -1;
-
-
 
 
 // Define a comunicação com o Display
@@ -136,7 +135,6 @@ void setup() {
     Serial.println("Setup done");
   }
 
-  //--------------------------------------
 
   // Inicializando a comunicação CAN
   delay(1000);
@@ -171,25 +169,23 @@ void setup() {
   }
 }
 
-
-
-
 void loop() {
   // Atualiza as informações da comunicação CAN
   canReceiver();
 
 
-
-  // Verifica o botão
+  // Verifica se o botão está precionado
   if (!digitalRead(pin_botao)){
     int t0 = millis();
 
+    // Passa a cor do cartão SD no display para azul (indicando que o botão está precionado)
     atualizaCardSDDisplay(2);
 
     while (!digitalRead(pin_botao)){    // Enquanto botão precionado
       if (millis() - t0 > time_botao_precionado){   // Se o botão está mais do que x ms precionado
 
         if (!CardSDSaving){     // Se não está ocorrendo armazenamento
+          time_inicial = millis();
 
           atualizaCardSDDisplay(3); // Seta a cor do cartão SD do display para verde para o piloto identificar que foi detectado
           define_filename(SD);      // Define o nome do arquivo
@@ -207,23 +203,18 @@ void loop() {
   }
 
   // Vai salvar no cartão SD caso seja necessário
-  if (CardSDSaving)
-    writeDataCardSD();
-
-
+  if (CardSDSaving && (millis() - t_aux) > tempo_entre_armazenamento){
+    writeDataCardSD(SD, time_inicial);
+    t_aux = millis();
+  }
 
   // Atualiza as informações do display
   atualizaDisplay();
-
-
 
   // Atualiza o display 
   lv_timer_handler();
   delay(5);
 }
-
-
-
 
 // Função responsável pela leitura do módulo de comunicação CAN BUS
 void canReceiver() {
@@ -262,7 +253,6 @@ void canReceiver() {
       if (CAN.available())
         lowTemp = (float)CAN.read();
       
-
       // Printa as informações (caso não recebeu, os valores printados serão -1)
       Serial.println("Values received: ");
       Serial.print("SOC: ");
@@ -283,12 +273,10 @@ void canReceiver() {
       Serial.print("Low Pack Temperature: ");
       Serial.println(lowTemp);
     }
-
   }
 }
 
 void atualizaDisplay() {
-
   // Atualiza a barra de SOC
   if (SOC >= 0){
     lv_bar_set_value(ui_SOCBar, SOC, LV_ANIM_OFF);
@@ -307,7 +295,6 @@ void atualizaDisplay() {
     }
   }
 
-
   // Atualiza texto Low Temp
   lv_label_set_text(ui_LowTemp, "%.1f°C", lowTemp);
 
@@ -325,7 +312,6 @@ void atualizaDisplay() {
 
   // Atualiza texto Pack Current
   lv_label_set_text(ui_PackCurrent, "%.1f A", packCurrent);
-
 
   // Atualiza Card SD
   if (CardSDSaving){    // Salvando no cartão SD
@@ -380,24 +366,32 @@ void writemessageCardSD (fs::FS &fs, const char * path, const char * message){
 
   Serial.printf("Writing file: %s\n", path);
 
-    File file = fs.open(path, FILE_WRITE);
-    if(!file){
-        Serial.println("Failed to open file for writing");
-        return;
-    }
-    if(file.print(message)){
-        Serial.println("File written");
-    } else {
-        Serial.println("Write failed");
-    }
-    file.close();
+  // Tenta abrir o arquivo
+  File file = fs.open(path, FILE_APPEND);
+
+  // Verifica se foi aberto corretamente
+  if(!file){
+      Serial.println("Failed to open file for writing");
+      return;
+  }
+
+  // Tenta armazenar a mensagem
+  if(file.print(message)){
+      Serial.println("File written");
+  } else {
+      Serial.println("Write failed");
+  }
+  file.close();
 }
 
-void writeDataCardSD (fs::FS &fs, unsigned int time_inicial){
-  File file = fs.open(filename, FILE_WRITE);
+void writeDataCardSD (fs::FS &fs, unsigned int time_zero){
+  // Tenta abrir o arquivo
+  File file = fs.open(filename, FILE_APPEND);
 
+  // Inicia uma variável auxiliar
   char message[100];
 
+  // Se o arquivo abriu corretamente, executa o armazenamento
   if (file){
     sprintf(message, "----------------------------\n");
     file.print(message);
@@ -415,10 +409,10 @@ void writeDataCardSD (fs::FS &fs, unsigned int time_inicial){
     file.print(message);
     sprintf(message, "Pack Current : %.2f\n", packCurrent);
     file.print(message);
-
-    sprintf(message, "Tempo(seg): %d\n", (int)(millis()-time_inicial)/1000);
+    sprintf(message, "Tempo(seg): %d\n", (int)(millis()-time_zero)/1000);
     file.print(message);
+
+    // Fecha o arquivo
     file.close();
   }
 }
-

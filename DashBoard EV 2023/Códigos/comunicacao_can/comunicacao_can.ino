@@ -100,6 +100,5 @@ void canReceiver() {
       Serial.print("Low Pack Temperature: ");
       Serial.println(lowTemp);
     }
-
   }
 }
