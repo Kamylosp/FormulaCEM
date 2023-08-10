@@ -1,0 +1,77 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\Public\Documents\Altium\TSAL_aprimorada\PCB2.PcbDoc
+Date     : 25/07/2023
+Time     : 19:05:42
+
+Processing Rule : Clearance Constraint (Gap=0.1mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.762mm) (Max=0.762mm) (Preferred=0.762mm) (All)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.762mm) (Max=0.762mm) (Preferred=0.762mm) (InNet('12V_LV'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=1.27mm) (Max=1.27mm) (Preferred=1.27mm) (InNet('HV+'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=1.27mm) (Max=1.27mm) (Preferred=1.27mm) (InNet('HV-'))
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)
+   Violation between Hole Size Constraint: (2.99mm > 2.54mm) Pad J-(64.629mm,13.331mm) on Multi-Layer Actual Hole Size = 2.99mm
+   Violation between Hole Size Constraint: (2.99mm > 2.54mm) Pad J-(73.279mm,1.901mm) on Multi-Layer Actual Hole Size = 2.99mm
+   Violation between Hole Size Constraint: (2.99mm > 2.54mm) Pad J-(81.929mm,13.331mm) on Multi-Layer Actual Hole Size = 2.99mm
+   Violation between Hole Size Constraint: (3.048mm > 2.54mm) Pad J1-3(28.854mm,10.668mm) on Multi-Layer Actual Hole Size = 3.048mm
+   Violation between Hole Size Constraint: (3.048mm > 2.54mm) Pad J1-4(10.541mm,10.668mm) on Multi-Layer Actual Hole Size = 3.048mm
+   Violation between Hole Size Constraint: (3.048mm > 2.54mm) Pad J1-5(19.698mm,2.667mm) on Multi-Layer Actual Hole Size = 3.048mm
+Rule Violations :6
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)
+   Violation between Silk To Solder Mask Clearance Constraint: (0.216mm < 0.254mm) Between Pad R1-1(22.987mm,30.734mm) on Multi-Layer And Track (22.987mm,28.702mm)(22.987mm,29.718mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.216mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.216mm < 0.254mm) Between Pad R1-2(22.987mm,20.574mm) on Multi-Layer And Track (22.987mm,21.59mm)(22.987mm,22.606mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.216mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.216mm < 0.254mm) Between Pad R2-1(90.904mm,39.14mm) on Multi-Layer And Track (90.904mm,37.108mm)(90.904mm,38.124mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.216mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.216mm < 0.254mm) Between Pad R2-2(90.904mm,28.98mm) on Multi-Layer And Track (90.904mm,29.996mm)(90.904mm,31.012mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.216mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.216mm < 0.254mm) Between Pad R3-1(64.869mm,23.646mm) on Multi-Layer And Track (65.885mm,23.646mm)(66.901mm,23.646mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.216mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.216mm < 0.254mm) Between Pad R3-2(75.029mm,23.646mm) on Multi-Layer And Track (72.997mm,23.646mm)(74.013mm,23.646mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.216mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.216mm < 0.254mm) Between Pad R4-1(94.333mm,39.14mm) on Multi-Layer And Track (94.333mm,37.108mm)(94.333mm,38.124mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.216mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.216mm < 0.254mm) Between Pad R4-2(94.333mm,28.98mm) on Multi-Layer And Track (94.333mm,29.996mm)(94.333mm,31.012mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.216mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.216mm < 0.254mm) Between Pad R5-1(87.983mm,28.98mm) on Multi-Layer And Track (87.983mm,29.996mm)(87.983mm,31.012mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.216mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.216mm < 0.254mm) Between Pad R5-2(87.983mm,39.14mm) on Multi-Layer And Track (87.983mm,37.108mm)(87.983mm,38.124mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.216mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.216mm < 0.254mm) Between Pad R6-1(66.52mm,38.251mm) on Multi-Layer And Track (66.52mm,36.219mm)(66.52mm,37.235mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.216mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.216mm < 0.254mm) Between Pad R6-2(66.52mm,28.091mm) on Multi-Layer And Track (66.52mm,29.107mm)(66.52mm,30.123mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.216mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.216mm < 0.254mm) Between Pad R7-1(43.688mm,12.065mm) on Multi-Layer And Track (44.704mm,12.065mm)(45.72mm,12.065mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.216mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.216mm < 0.254mm) Between Pad R7-2(53.848mm,12.065mm) on Multi-Layer And Track (51.816mm,12.065mm)(52.832mm,12.065mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.216mm]
+Rule Violations :14
+
+Processing Rule : Silk to Silk (Clearance=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 20
+Waived Violations : 0
+Time Elapsed        : 00:00:01

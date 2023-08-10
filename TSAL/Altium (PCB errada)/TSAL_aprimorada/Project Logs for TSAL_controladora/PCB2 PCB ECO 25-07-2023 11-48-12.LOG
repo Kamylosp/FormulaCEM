@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=Out_GREEN Pin=J-1
+Removed Pin From Net: NetName=Out_RED Pin=J-2
+Added Pin To Net: NetName=Out_RED Pin=J-1
+Added Pin To Net: NetName=Out_GREEN Pin=J-2
+Added Member To Class: ClassName=Esquematico_TSAL_controladora Member=Component R2 Res2

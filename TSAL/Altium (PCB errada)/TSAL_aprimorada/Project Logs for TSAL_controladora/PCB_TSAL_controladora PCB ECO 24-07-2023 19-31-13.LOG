@@ -1,0 +1,5 @@
+Add Component: Footprint Not Found TE_DT13-2P
+Add Pin To Net: Unknown Pin: Pin J1-2
+Added Pin To Net: NetName=NetJ1_1 Pin=U1-2
+Added Net: Name=NetJ1_1
+Add Class Member: Failed to add class member : Component J1 DT13-2P
